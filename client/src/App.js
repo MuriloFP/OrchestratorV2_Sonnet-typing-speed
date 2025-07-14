@@ -7,6 +7,9 @@ import LoadingSpinner from './components/LoadingSpinner';
 import axios from 'axios';
 import './App.css';
 
+// Configure API base URL
+const API_BASE_URL = process.env.REACT_APP_API_URL || '';
+
 function App() {
   const [currentPassage, setCurrentPassage] = useState(null);
   const [testResults, setTestResults] = useState(null);
@@ -22,7 +25,7 @@ function App() {
       if (difficulty) params.difficulty = difficulty;
       if (category) params.category = category;
 
-      const response = await axios.get('/api/passages/random', { params });
+      const response = await axios.get(`${API_BASE_URL}/api/passages/random`, { params });
       setCurrentPassage(response.data);
       setGameState('testing');
     } catch (error) {
@@ -43,7 +46,7 @@ function App() {
   const handleTestComplete = async (typedText, timeInSeconds) => {
     setIsLoading(true);
     try {
-      const response = await axios.post('/api/calculate-score', {
+      const response = await axios.post(`${API_BASE_URL}/api/calculate-score`, {
         originalText: currentPassage.text,
         typedText,
         timeInSeconds
