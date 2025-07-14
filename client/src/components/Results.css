@@ -1,0 +1,323 @@
+.results-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.results-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.performance-header {
+  margin-bottom: 3rem;
+}
+
+.performance-emoji {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.performance-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.performance-message {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.result-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.result-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.result-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.result-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.result-rating {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Specific card styling */
+.wpm-card::before {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+}
+
+.accuracy-card::before {
+  background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+}
+
+.time-card::before {
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+}
+
+.chars-card::before {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+}
+
+.passage-info {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 15px;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.passage-info h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.passage-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.difficulty-badge,
+.category-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.difficulty-badge {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+}
+
+.category-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.results-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.action-button.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.action-button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+}
+
+.action-button.secondary {
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.action-button.secondary:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Celebration effects */
+.results-content.celebration {
+  animation: celebrationPulse 0.6s ease-out;
+}
+
+@keyframes celebrationPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* High score effects */
+.result-card.high-score {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 193, 7, 0.1) 100%);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.result-card.high-score::after {
+  content: '🏆';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  animation: trophy 2s infinite;
+}
+
+@keyframes trophy {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(5deg) scale(1.1); }
+  75% { transform: rotate(-5deg) scale(1.1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .results-content {
+    padding: 2rem;
+    margin: 1rem;
+  }
+  
+  .performance-title {
+    font-size: 2rem;
+  }
+  
+  .performance-message {
+    font-size: 1.1rem;
+  }
+  
+  .performance-emoji {
+    font-size: 3rem;
+  }
+  
+  .results-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .result-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .result-value {
+    font-size: 2rem;
+  }
+  
+  .result-icon {
+    font-size: 2rem;
+  }
+  
+  .action-button {
+    min-width: 150px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .results-content {
+    padding: 1.5rem;
+  }
+  
+  .performance-title {
+    font-size: 1.8rem;
+  }
+  
+  .performance-message {
+    font-size: 1rem;
+  }
+  
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .result-card {
+    padding: 1.2rem 0.8rem;
+  }
+  
+  .result-value {
+    font-size: 1.8rem;
+  }
+  
+  .results-actions {
+    flex-direction: column;
+  }
+  
+  .action-button {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .passage-meta {
+    flex-direction: column;
+    align-items: center;
+  }
+}

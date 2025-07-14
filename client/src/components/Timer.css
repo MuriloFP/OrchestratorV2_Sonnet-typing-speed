@@ -1,0 +1,106 @@
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+}
+
+.timer-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timer-display {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+  color: #333;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background: rgba(102, 126, 234, 0.1);
+  min-width: 120px;
+  transition: all 0.3s ease;
+}
+
+.timer-display.active {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.2);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+.timer-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.status-indicator.running {
+  background-color: #4caf50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.status-indicator.stopped {
+  background-color: #f44336;
+}
+
+.status-text {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timer-container {
+    min-width: 120px;
+    padding: 0.8rem;
+  }
+  
+  .timer-display {
+    font-size: 1.5rem;
+    min-width: 100px;
+  }
+  
+  .timer-label {
+    font-size: 0.8rem;
+  }
+  
+  .timer-status {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timer-container {
+    min-width: 100px;
+    padding: 0.6rem;
+  }
+  
+  .timer-display {
+    font-size: 1.3rem;
+    min-width: 90px;
+  }
+  
+  .status-indicator {
+    width: 6px;
+    height: 6px;
+  }
+}

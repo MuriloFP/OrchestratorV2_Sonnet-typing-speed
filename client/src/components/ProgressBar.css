@@ -1,0 +1,191 @@
+.progress-container {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.progress-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.progress-percentage {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.progress-bar-wrapper {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.progress-bar-background {
+  width: 100%;
+  height: 12px;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  position: relative;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.progress-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  border-radius: 6px;
+}
+
+.progress-message {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.progress-milestones {
+  position: relative;
+  height: 30px;
+  margin-top: 0.5rem;
+}
+
+.milestone {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.milestone-marker {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.milestone.reached .milestone-marker {
+  background-color: #4caf50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.milestone-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.milestone.reached .milestone-label {
+  color: #4caf50;
+}
+
+/* Progress bar color variations */
+.progress-bar-fill[style*="rgb(255, 107, 107)"] {
+  background: linear-gradient(90deg, #ff6b6b 0%, #ee5a24 100%);
+}
+
+.progress-bar-fill[style*="rgb(255, 167, 38)"] {
+  background: linear-gradient(90deg, #ffa726 0%, #ff9800 100%);
+}
+
+.progress-bar-fill[style*="rgb(66, 165, 245)"] {
+  background: linear-gradient(90deg, #42a5f5 0%, #2196f3 100%);
+}
+
+.progress-bar-fill[style*="rgb(102, 187, 106)"] {
+  background: linear-gradient(90deg, #66bb6a 0%, #4caf50 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .progress-container {
+    padding: 0.8rem;
+    margin: 1rem 0;
+  }
+  
+  .progress-header {
+    margin-bottom: 0.8rem;
+  }
+  
+  .progress-label {
+    font-size: 0.8rem;
+  }
+  
+  .progress-percentage {
+    font-size: 1.1rem;
+  }
+  
+  .progress-bar-background {
+    height: 10px;
+  }
+  
+  .milestone-marker {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .milestone-label {
+    font-size: 0.6rem;
+  }
+  
+  .progress-message {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .progress-container {
+    padding: 0.6rem;
+  }
+  
+  .progress-bar-background {
+    height: 8px;
+  }
+  
+  .milestone-marker {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .milestone-label {
+    font-size: 0.5rem;
+  }
+  
+  .progress-milestones {
+    height: 25px;
+  }
+}
